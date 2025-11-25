@@ -2,7 +2,7 @@ $(document).ready(function () {
     const repoOwner = "smetbz";
     const repoName = "smetbz.github.io";
 
-    const allowedJsonUrl = "http://127.0.0.1:5500/allowedList.json";
+    const allowedJsonUrl = "https://raw.githubusercontent.com/smetbz/smetbz.github.io/refs/heads/main/allowedList.json";
     const PROXY_URL = `https://githubproxy.sakhtotoolid.workers.dev/github/`;
 
     $.getJSON(allowedJsonUrl,
