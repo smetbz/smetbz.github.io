@@ -5,18 +5,15 @@ $(document).ready(function () {
     const persianNamesUrl = `https://cdn.jsdelivr.net/gh/smetbz/smetbz.github.io@main/persianNames.json`;
     const allowedJsonUrl = "https://cdn.jsdelivr.net/gh/smetbz/smetbz.github.io@main/allowedList.json";
     const PROXY_URL = `https://api.smtu.ir/github/`;
+    const BRIDGE_URL = `https://api.smtu.ir/bridge/`;
+
 
     $.getJSON(allowedJsonUrl,
         function (data) {                   
+       
+            $.getJSON(persianNamesUrl, function(persianNames) {
 
-
-            let persianNames;
-            $.getJSON(persianNamesUrl)
-             .done(d => {
-                persianNames = d;
-            });
-            
-            $.getJSON(`${PROXY_URL}repos/${repoOwner}/${repoName}/issues/${getIssueId()}`,
+                $.getJSON(`${PROXY_URL}repos/${repoOwner}/${repoName}/issues/${getIssueId()}`,
                 function (issueData, textStatus, jqXHR) {
 
             
@@ -48,7 +45,7 @@ $(document).ready(function () {
                     $("#blogpost-image").attr("src", extractIssueImage(issueData.body)).attr("alt", result.title);
                     $("#blogpost-content").append(result.content);
 
-                    $("#blogpost-footer-avatar").attr("src", issueData.user.avatar_url).attr("alt", `Photo of ${issueData.user.login} github profile.`);
+                    $("#blogpost-footer-avatar").attr("src", `${BRIDGE_URL}avatar/${issue.user.login}`).attr("alt", `Photo of ${issueData.user.login} github profile.`);
                     $("#blogpost-footer-name").html(persianNames[issueData.user.login] !== undefined ? persianNames[issueData.user.login] : issueData.user.login);
 
                     result.keywords.forEach(kv => {
@@ -60,12 +57,18 @@ $(document).ready(function () {
                       });
 
                     $("#whole-post").fadeIn();
+                    $("#loading-overlay").fadeOut();
                     
                 }
             ).fail(function() {                
                window.location.href = "/blog.html";
                return;
             });
+
+            });
+             
+            
+           
 
         }
     );

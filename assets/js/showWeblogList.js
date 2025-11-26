@@ -8,6 +8,8 @@ $(document).ready(function () {
     const filterLabel = "BLOG";
     const perPage = 10;
     const PROXY_URL = `https://api.smtu.ir/github/`;
+    const BRIDGE_URL = `https://api.smtu.ir/bridge/`;
+
 
     let allFilteredIssues = [];
     let currentFiltered = [];
@@ -82,7 +84,7 @@ $(document).ready(function () {
                             <div class=\"blogs-post-footer\">
                                 <div class=\"blogs-post-author\">
                                     <div class=\"blogs-author-avatar\">
-                                        <img src=\"${issue.user.avatar_url}\" alt=\"مریم کریمی\">
+                                        <img src=\"${BRIDGE_URL}avatar/${issue.user.login}\" alt=\"مریم کریمی\">
                                     </div>
                                     <div class=\"blogs-author-info\">
                                         <div class=\"blogs-author-name\">${issue.user.login}</div>
@@ -126,7 +128,9 @@ $(document).ready(function () {
                 renderPage(1);
             }
 
-            init();
+            init().then(() => {
+                $("#loading-overlay").fadeOut();
+            });
 
             $("#search-blogs").on("input", () => {
 

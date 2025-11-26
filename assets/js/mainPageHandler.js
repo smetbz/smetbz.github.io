@@ -3,8 +3,9 @@ $(document).ready(function () {
     const repoName = "smetbz.github.io";
     const filterLabel = "BLOG"
 
-    const allowedJsonUrl = "https://raw.githubusercontent.com/smetbz/smetbz.github.io/refs/heads/main/allowedList.json";
+    const allowedJsonUrl = "https://cdn.jsdelivr.net/gh/smetbz/smetbz.github.io@main/allowedList.json";
     const PROXY_URL = `https://api.smtu.ir/github/`;
+    const BRIDGE_URL = `https://api.smtu.ir/bridge/`;
 
     let filteredIssues = [];
 
@@ -57,7 +58,7 @@ $(document).ready(function () {
                         </div>
                         <div class="course-instructor">
                             <div class="testimonial-avatar">
-                                <img src=\"${issue.user.avatar_url}\" alt=\"${issue.user.login}\">
+                                <img src=\"${BRIDGE_URL}avatar/${issue.user.login}\" alt=\"${issue.user.login}\">
                             </div>
                             <span>${issue.user.login}</span>
                         </div>
