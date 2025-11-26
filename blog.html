@@ -25,11 +25,18 @@
     <link rel="stylesheet" href="./assets/icons/css/all.min.css">
     
     <link rel="stylesheet" href="./assets/css/style.css">
-
-
+   
 </head>
 
 <body class="blogs-dark-theme">
+
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-box">
+            <div class="loading-title">درحال بارگذاری</div>
+            <div class="loading-sub">لطفا صبر نمایید</div>
+        </div>
+    </div>
+
     <!-- هدر بهبود یافته -->
     <header class="blogs-page-header" id="blogs-page-header">
         <div  id="upper-notif" style="display: none;" class="blogs-top-bar">
@@ -207,6 +214,111 @@
                 <div class="blogs-blog-posts" id="weblog-container">                    
                                  
                 </div>
+
+                <aside class="blogs-blog-sidebar">
+                    <!-- دسته‌بندی‌ها -->
+                    <div class="blogs-sidebar-widget">
+                        <h3 class="blogs-widget-title">دسته‌بندی‌ها</h3>
+                        <ul class="blogs-categories-list">
+                            <li class="blogs-category-item">
+                                <a href="#" class="blogs-category-link">
+                                    <span>برنامه‌نویسی</span>
+                                    <span class="blogs-category-count">۲۴</span>
+                                </a>
+                            </li>
+                            <li class="blogs-category-item">
+                                <a href="#" class="blogs-category-link">
+                                    <span>هوش مصنوعی</span>
+                                    <span class="blogs-category-count">۱۸</span>
+                                </a>
+                            </li>
+                            <li class="blogs-category-item">
+                                <a href="#" class="blogs-category-link">
+                                    <span>طراحی UI/UX</span>
+                                    <span class="blogs-category-count">۱۵</span>
+                                </a>
+                            </li>
+                            <li class="blogs-category-item">
+                                <a href="#" class="blogs-category-link">
+                                    <span>مهارت‌های نرم</span>
+                                    <span class="blogs-category-count">۱۲</span>
+                                </a>
+                            </li>
+                            <li class="blogs-category-item">
+                                <a href="#" class="blogs-category-link">
+                                    <span>مدیریت زمان</span>
+                                    <span class="blogs-category-count">۸</span>
+                                </a>
+                            </li>
+                            <li class="blogs-category-item">
+                                <a href="#" class="blogs-category-link">
+                                    <span>فریلنسینگ</span>
+                                    <span class="blogs-category-count">۶</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- پست‌های محبوب -->
+                    <div class="blogs-sidebar-widget">
+                        <h3 class="blogs-widget-title">پست‌های محبوب</h3>
+                        <div class="blogs-popular-posts">
+                            <div class="blogs-popular-post">
+                                <div class="blogs-popular-post-image">
+                                    <img src="./assets/images/01.jpg" alt="بررسی فریمورک‌های Front-end">
+                                </div>
+                                <div class="blogs-popular-post-content">
+                                    <h4 class="blogs-popular-post-title">بررسی جامع فریمورک‌های Front-end در سال ۲۰۲۳</h4>
+                                    <div class="blogs-popular-post-meta">
+                                        <span>۲۵ مرداد</span>
+                                        <span>۸ دقیقه</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blogs-popular-post">
+                                <div class="blogs-popular-post-image">
+                                    <img src="./assets/images/02.jpg" alt="مهارت‌های نرم">
+                                </div>
+                                <div class="blogs-popular-post-content">
+                                    <h4 class="blogs-popular-post-title">۱۰ مهارت نرم ضروری برای توسعه‌دهندگان</h4>
+                                    <div class="blogs-popular-post-meta">
+                                        <span>۱۸ مرداد</span>
+                                        <span>۶ دقیقه</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blogs-popular-post">
+                                <div class="blogs-popular-post-image">
+                                    <img src="./assets/images/03.jpg" alt="یادگیری ماشین">
+                                </div>
+                                <div class="blogs-popular-post-content">
+                                    <h4 class="blogs-popular-post-title">راهنمای کامل یادگیری ماشین برای مبتدیان</h4>
+                                    <div class="blogs-popular-post-meta">
+                                        <span>۱۲ مرداد</span>
+                                        <span>۱۰ دقیقه</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- تگ‌ها -->
+                    <div class="blogs-sidebar-widget">
+                        <h3 class="blogs-widget-title">تگ‌ها</h3>
+                        <div class="blogs-tags-cloud">
+                            <a href="#" class="blogs-tag">برنامه‌نویسی</a>
+                            <a href="#" class="blogs-tag">React</a>
+                            <a href="#" class="blogs-tag">JavaScript</a>
+                            <a href="#" class="blogs-tag">Python</a>
+                            <a href="#" class="blogs-tag">یادگیری ماشین</a>
+                            <a href="#" class="blogs-tag">طراحی</a>
+                            <a href="#" class="blogs-tag">Figma</a>
+                            <a href="#" class="blogs-tag">فریلنسینگ</a>
+                            <a href="#" class="blogs-tag">مدیریت زمان</a>
+                            <a href="#" class="blogs-tag">مهارت‌های نرم</a>
+                        </div>
+                    </div>
+                </aside>
                
             </div>
             
