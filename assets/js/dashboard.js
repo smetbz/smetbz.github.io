@@ -1,6 +1,7 @@
 // مدیریت تغییر تم - نسخه یکپارچه و تصحیح شده
 const themeToggle = document.getElementById('theme-toggle');
 const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+const mobkv = document.getElementById("theme-toggler-mobile-kv");
 const aboutsThemeToggle = document.getElementById('abouts-theme-toggle');
 const aboutsMobileThemeToggle = document.getElementById('abouts-mobile-theme-toggle');
 const blogsThemeToggle = document.getElementById('blogs-theme-toggle');
@@ -147,7 +148,7 @@ initializeTheme();
 const allThemeToggles = [
     themeToggle, mobileThemeToggle, aboutsThemeToggle, 
     aboutsMobileThemeToggle, blogsThemeToggle, blogsMobileThemeToggle,
-    cardsThemeToggle, contentThemeToggle, contentMobileThemeToggle
+    cardsThemeToggle, contentThemeToggle, contentMobileThemeToggle, mobkv
 ];
 
 allThemeToggles.forEach(toggle => {
