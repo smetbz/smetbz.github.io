@@ -1,7 +1,7 @@
-const OWNER = "smetbz";
-const REPO = "smetbz.github.io";
-const PROXY_URL = `https://api.smtu.ir/github/`;
-const BRIDGE_URL = `https://api.smtu.ir/bridge/`;
+const OWNER = "smetu";
+const REPO = "smetu.github.io";
+const PROXY_URL = `https://api.smetu.ir/github/`;
+const BRIDGE_URL = `https://api.smetu.ir/bridge/`;
 
 const categoriesInPersian = {
     "BLOG": "وبلاگ",

@@ -1,6 +1,6 @@
 $(document).ready(function () {
-    const repoOwner = "smetbz";
-    const repoName = "smetbz.github.io";
+    const repoOwner = "smetu";
+    const repoName = "smetu.github.io";
     const filterLabel = "BLOG"
    
 
