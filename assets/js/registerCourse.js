@@ -61,7 +61,15 @@ async function checkCourseStatus() {
             success: function (data) {
                  if (data.ok === true) {
                     $(".content-btn-submit").text("ثبت نام").prop("disabled", false);
-                    $("#content-success-message").text("Successful").show();
+                        Swal.fire({
+                            title: 'عملیات موفق!',
+                            text: 'کارشناسان ما از طریق تلگرام با شما در تماس خواهند بود.',
+                            icon: 'success',
+                            confirmButtonText: 'باشه',                           
+                            background: '#2f2f2f', 
+                            color: '#ffffff',       
+                            confirmButtonColor: '#2ea2cc' 
+                        });
             }
         },
             error: function (err) {
