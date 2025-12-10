@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>عنوان</title>
+    <title>نشریه انجمن علمی مهندسی ساخت و تولید</title>
     <meta name="description" content="خلاصه مقاله برای سئو">
 
     <meta property="og:title" content="نشریه انجمن علمی ساخت و تولید" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://smetu.ir/blog.html" />
+    <meta property="og:url" content="https://smetu.ir/journal.html" />
     <!-- <meta property="og:image" content="https://yourforum.example.ir/assets/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" /> -->
@@ -61,7 +61,7 @@
         <div class="container">
             <div class="header-wrap">
                 <!-- لوگو -->
-                <a href="index.html" class="logo" id="main-logo">
+                <a href="/" class="logo" id="main-logo">
                     <img style="width: 3rem;" src="/assets/images/logos/icon_sme_small.png">
                     <span>انجمن علمی ساخت و تولید</span>
                 </a>
@@ -71,7 +71,7 @@
                     <nav>
                         <ul class="main-nav">
                             <li class="nav-item">
-                                <a href="index.html" class="nav-link">خانه</a>
+                                <a href="/" class="nav-link">خانه</a>
                             </li>
                             <li class="nav-item">
                                 <a href="/blog.html" class="nav-link">وبلاگ</a>
@@ -83,14 +83,14 @@
                                 <a href="/news.html" class="nav-link">اخبار</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/online-course.html" class="nav-link">دوره مجازی</a>
+                                <a href="/online_course.html" class="nav-link">دوره مجازی</a>
                             </li>
                             <li class="nav-item">
                                 <a href="instructors.html" class="nav-link">اساتید</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/about.html" class="nav-link">درباره ما</a>
-                            </li>    
+                                <a href="/about_us.html" class="nav-link">درباره ما</a>
+                            </li>                                                    
                         </ul>
                     </nav>
 
@@ -101,8 +101,8 @@
                             <i class="fas fa-moon"></i>
                         </button>
                        
-                        <!-- <a href="login.html" class="btn btn-secondary">ورود</a>
-                        <a href="register.html" class="btn btn-primary">عضویت</a> -->
+                        <a href="/register.html" class="btn btn-primary">عضویت در انجمن</a>
+                        <a href="/en.html" class="btn btn-secondary">English</a>                        
                     </div>
                 </div>
 
@@ -120,9 +120,9 @@
         <!-- منوی موبایل -->
         <div class="mobile-nav-container" id="mobile-nav-container">
             <nav>
-                <ul class="mobile-nav">
+               <ul class="mobile-nav">
                     <li class="mobile-nav-item">
-                        <a href="index.html" class="mobile-nav-link">
+                        <a href="/" class="mobile-nav-link">
                             <i class="fas fa-home"></i>
                             <span>خانه</span>
                         </a>
@@ -146,37 +146,44 @@
                         </a>
                     </li>
                     <li class="mobile-nav-item">
-                        <a href="/online-course.html" class="mobile-nav-link">
+                        <a href="/online_course.html" class="mobile-nav-link">
                             <i class="fas fa-graduation-cap"></i>
                             <span>دوره مجازی</span>
                         </a>
                     </li>                    
                     <li class="mobile-nav-item">
-                        <a href="instructors.html" class="mobile-nav-link">
+                        <a href="/instructors.html" class="mobile-nav-link">
                             <i class="fas fa-chalkboard-teacher"></i>
                             <span>اساتید</span>
                         </a>
-                    </li>                                     
+                    </li> 
                     <li class="mobile-nav-item">
-                        <a href="about.html" class="mobile-nav-link">
+                        <a href="/register.html" class="mobile-nav-link">
+                            <i class="fas fa-pen"></i>
+                            <span>عضویت در انجمن</span>
+                        </a>
+                    </li>                                                    
+                    <li class="mobile-nav-item">
+                        <a href="/about_us.html" class="mobile-nav-link">
                             <i class="fas fa-info-circle"></i>
                             <span>درباره ما</span>
                         </a>
                     </li>
                     <li class="mobile-nav-item">
-                        <a href="contact.html" class="mobile-nav-link">
-                            <i class="fas fa-envelope"></i>
-                            <span>تماس با ما</span>
+                        <a href="/en" class="mobile-nav-link">
+                            <i class="fas fa-book"></i>
+                            <span>نسخه انگلیسی</span>
                         </a>
-                    </li>
+                    </li> 
+                    <li id="theme-toggler-mobile-kv" class="mobile-nav-item">
+                        <a href="javscript:void(0)" class="mobile-nav-link">
+                            <i class="fas fa-moon"></i>
+                            <span>تغییر پوسته</span>
+                        </a>
+                    </li>                    
                 </ul>
             </nav>
-           
-            <div class="mobile-header-actions">                                      
-                <div class="mobile-auth-buttons">                    
-                    <a id="theme-toggler-mobile-kv" href="javascript:void(0)" class="btn btn-primary" style="width: 100%;">تغییر تم</a>
-                </div>
-             </div>
+                      
         </div>
         
         <!-- overlay برای منوی موبایل -->
@@ -249,7 +256,7 @@
             <div class="footer-main">
                 <!-- ستون اول: درباره ما -->
                 <div class="footer-col">
-                    <a href="index.html" class="footer-logo">
+                    <a href="/" class="footer-logo">
                         <img style="width: 3rem;" src="/assets/images/logos/icon_sme_small.png">
                         <span style="font-size: 1.2rem;">انجمن علمی ساخت و تولید</span>
                     </a>
@@ -278,11 +285,11 @@
                 <div class="footer-col">
                     <h3>لینک‌های سریع</h3>
                     <ul class="footer-links">
-                        <li><a href="/index.html"><i class="fas fa-home"></i> صفحه اصلی</a></li>
+                        <li><a href="/"><i class="fas fa-home"></i> صفحه اصلی</a></li>
                         <li><a href="/blog.html"><i class="fas fa-blog"></i>وبلاگ</a></li>
                         <li><a href="/journal.html"><i class="fas fa-newspaper"></i>نشریه</a></li>
                         <li><a href="/news.html"><i class="fas fa-newspaper"></i>اخبار</a></li>
-                        <li><a href="/online-course.html"><i class="fas fa-graduation-cap"></i>دوره مجازی</a></li>
+                        <li><a href="/online_course.html"><i class="fas fa-graduation-cap"></i>دوره مجازی</a></li>
                     </ul>
                 </div>
                 
@@ -290,10 +297,10 @@
                 <div class="footer-col">
                     <h3>لینک های مفید</h3>
                     <ul class="footer-links">
-                        <li><a href="https://tabrizu.ac.ir/fa"><i class="fas fa-link"></i> سایت دانشگاه تبریز</a></li>
-                        <li><a href="https://mechanic.tabrizu.ac.ir/fa"><i class="fas fa-link"></i> سایت دانشکده مکانیک</a></li>
-                        <li><a href="https://amozesh.tabrizu.ac.ir/samaweb/login.aspx"><i class="fas fa-link"></i> سایت سما دانشگاه تبریز</a></li>
-                        <li><a href="https://samad.app/login"><i class="fas fa-link"></i> سایت امور دانشجویی سماد تبریز</a></li>
+                        <li><a target="_blank" href="https://tabrizu.ac.ir/fa"><i class="fas fa-university"></i>دانشگاه تبریز</a></li>
+                        <li><a target="_blank" href="https://mechanic.tabrizu.ac.ir/fa"><i class="fas fa-gear"></i>دانشکده مکانیک تبریز</a></li>
+                        <li><a target="_blank" href="https://amozesh.tabrizu.ac.ir/samaweb/login.aspx"><i class="fas fa-user"></i>سما دانشگاه تبریز</a></li>
+                        <li><a target="_blank" href="https://samad.app/login"><i class="fas fa-burger"></i>امور دانشجویی سماد تبریز</a></li>
                     </ul>
                 </div>
                 
@@ -307,11 +314,11 @@
                         </li>
                         <li>
                             <i class="fas fa-phone"></i>
-                            <span>۰4۱-۱۲۳۴۵۶۷۸</span>
+                            <span><a href="tel:0411234567">0411234567<a></span>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <span><a href="mailto:info@smtu.ir">info@smtu.ir<a></span>
+                            <span><a href="mailto:info@smetu.ir">info@smetu.ir<a></span>
                         </li>
                         <li>
                             <i class="fas fa-clock"></i>
@@ -332,14 +339,17 @@
                     </div>
                     <div class="footer-bottom-links">
                         <a target="_blank" href="https://kavascript.ir/">طراحی توسط کاوه</a>
-                        <a href="/faq.html">سوالات متداول</a>
-                        <a href="/sitemap.xml">نقشه سایت</a>                       
+                        <!-- <a href="/faq.html">سوالات متداول</a> -->
+                        <a target="_blank" href="/sitemap.xml">نقشه سایت</a>                       
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
+    <div class="content-back-to-top" id="content-back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
 
     <script src="./assets/js/dashboard.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
@@ -349,10 +359,12 @@
     <script src="/assets/js/constants.js"></script>
     <script src="/assets/js/postItselfHandler.js"></script>
     <script>
-        showPostDetails(getIssueId(), "/journal.html", "JOURNAL").then(() => {
-            $("#loading-overlay").fadeOut();
-            $("#whole-post").fadeIn();  
-        });
+        $(document).ready(function () {
+            showPostDetails(getIssueId(), "/journal.html", "JOURNAL").then(() => {
+                $("#loading-overlay").fadeOut();
+                $("#whole-post").fadeIn();  
+            });
+        });        
     </script>
 
 </body>
