@@ -154,7 +154,17 @@ async function showCurrentCourse(issuesData) {
    
 };
 
-$(document).ready(function () {    
+$(document).ready(function () {  
+    
+    $.getJSON(`https://admin.sakhtotoolid.workers.dev/upper`,
+        function (upper) {
+            if(upper.message === "off") return;
+            $("#upper-notif-text").text(upper.message);
+            $("#upper-notif").show();
+        }
+    ).fail(function() {                                 
+       return;
+    });
 
     $.getJSON(`${PROXY_URL}repos/${OWNER}/${REPO}/issues`,
         function (issuesData) {
