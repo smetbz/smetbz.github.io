@@ -744,41 +744,40 @@ if (ratingFilter) {
 const instructorPopup = document.getElementById('instructor-popup');
 const popupClose = document.getElementById('popup-close');
 
-// داده‌های نمونه برای پاپ آپ
 const instructorsData = {
     1: {
-        name: "علی رضایی",
-        title: "متخصص توسعه Front-end",
-        rating: 4.7,
-        courses: 12,
-        students: 3456,
-        reviews: 4200,
-        bio: "علی با بیش از ۸ سال تجربه در توسعه Front-end، تخصص عمیقی در فریمورک‌های مدرن جاوااسکریپت دارد. او علاقه زیادی به آموزش و به اشتراک گذاری دانش خود با دیگران دارد. علی در شرکت‌های معتبری مانند دیجی‌کالا و اسنپ تجربه کاری داشته و اکنون به عنوان مدرس و مشاور فنی فعالیت می‌کند.",
-        skills: ["React.js", "Vue.js", "JavaScript", "TypeScript", "HTML/CSS", "SASS"],
-        avatar: "./assets/images/me2.png"
+        name: "دکتر وحید پویافر",
+        title: "دکترای تخصصی",       
+        bio: "عضو هیئت علمی تمام وقت",
+        skills: [
+            { name: 'رزومه', url: 'https://faculty.tabrizu.ac.ir/pouyafar/fa/teachersInfo/cv/345' },
+            { name: 'Google Scholar', url: `https://scholar.google.com/citations?user=nB_QyO0AAAAJ&hl=en` },
+            { name: 'ORCID', url: `https://orcid.org/0000-0003-3130-8713` },
+            { name: 'Research GATE', url: `https://www.researchgate.net/profile/Vahid-Pouyafar` },
+        ],
+        savabegh_tahsili: [
+            { name: 'کارشناسی', year: '1383', uni: 'دانشگاه تبریز' },
+            { name: 'کارشناسی ارشد', year: '1385', uni: 'دانشگاه صنعتی امیرکبیر' },
+            { name: 'دکترای تخصصی', year: '1391', uni: 'دانشگاه صنعتی امیرکبیر' },
+        ],
+        avatar: "https://faculty.tabrizu.ac.ir/images/pouyafar/fa/teachersInfo/teacher-personal-image/2024/66f08b7300091-800px-vahid.pouyafar.jpg"
     },
-    2: {
-        name: "مریم کریمی",
-        title: "متخصص هوش مصنوعی و داده‌کاوی",
-        rating: 5.0,
-        courses: 8,
-        students: 2891,
-        reviews: 3100,
-        bio: "مریم دکترای هوش مصنوعی از دانشگاه شریف دارد و بیش از ۶ سال در صنعت فناوری فعالیت می‌کند. او علاقه زیادی به آموزش مفاهیم پیچیده هوش مصنوعی به زبان ساده دارد. مریم در پروژه‌های متعددی در زمینه بینایی کامپیوتر و پردازش زبان طبیعی مشارکت داشته است.",
-        skills: ["Python", "TensorFlow", "PyTorch", "Data Science", "Machine Learning", "Deep Learning"],
-        avatar: "./assets/images/me.png"
-    },
-    3: {
-        name: "رضا نوروزی",
-        title: "طراح تجربه و رابط کاربری",
-        rating: 4.9,
-        courses: 10,
-        students: 4123,
-        reviews: 3800,
-        bio: "رضا با بیش از ۷ سال تجربه در طراحی محصولات دیجیتال، تخصص ویژه‌ای در طراحی رابط کاربری و تجربه کاربری دارد. او برنده چندین جایزه بین‌المللی در زمینه طراحی شده است. رضا در شرکت‌های بزرگی مانند ایرانسل و تپسی به عنوان طراح ارشد فعالیت کرده است.",
-        skills: ["UI Design", "UX Research", "Figma", "Adobe XD", "Prototyping", "Design Systems"],
-        avatar: "./assets/images/me3.jpg"
+    5: {
+        name: "دکتر مقصود شلوندی",
+        title: "دکترای تخصصی",       
+        bio: "عضو هیئت علمی تمام وقت",
+        skills: [
+            { name: 'رزومه', url: 'https://faculty.tabrizu.ac.ir/mshalvandi/fa/teachersInfo/cv/30' },
+            { name: 'Google Scholar', url: `https://scholar.google.com/citations?user=fJB1H6cAAAAJ&hl=en` }
+        ],
+        savabegh_tahsili: [
+            { name: 'کارشناسی', year: '1383', uni: 'دانشگاه تبریز' },
+            { name: 'کارشناسی ارشد', year: '1385', uni: 'دانشگاه تربیت مدرس تهران' },
+            { name: 'دکترای تخصصی', year: '1395', uni: 'دانشگاه تربیت مدرس تهران' },
+        ],
+        avatar: "https://faculty.tabrizu.ac.ir/images/mshalvandi/fa/teachersInfo/teacher-personal-image/2024/66ba6c0478500-photo-2022-02-04-00-42-49.jpg"
     }
+    
 };
 
 function openInstructorPopup(instructorId) {
@@ -830,10 +829,28 @@ function openInstructorPopup(instructorId) {
         if (skillsContainer) {
             skillsContainer.innerHTML = '';
             instructor.skills.forEach(skill => {
-                const skillElement = document.createElement('span');
+                const skillElement = document.createElement('a');
                 skillElement.className = 'instru-skill-tag';
-                skillElement.textContent = skill;
+                skillElement.href = skill.url;
+                skillElement.target = "_blank";
+                skillElement.textContent = skill.name;
                 skillsContainer.appendChild(skillElement);
+            });
+        }
+
+        const savabeghTahsili = document.getElementById('popup-courses-list');
+        if(savabeghTahsili) {
+            savabeghTahsili.innerHTML = '';
+            instructor.savabegh_tahsili.forEach(savabegh => {
+                savabeghTahsili.insertAdjacentHTML("beforeend", `
+                         <div class="instru-popup-course">
+                            <div class="instru-popup-course-title">${savabegh.name}</div>
+                            <div class="instru-popup-course-meta">
+                                <span>سال ${savabegh.year}</span>
+                                <span>${savabegh.uni}</span>
+                            </div>
+                        </div>                              
+                    `)
             });
         }
         
