@@ -483,6 +483,21 @@
         </div>
     </section>
 
+    <!-- NEWS -->
+    <section style="display: none;" class="courses-section" id="news-section">
+        <div class="container">
+            <div class="courses-header">
+                <div>
+                    <span class="section-subtitle">دپارتمان روابط عمومی</span>
+                    <h2 class="section-title">اخبار و رویداد‌ها</h2>
+                </div>
+                <a href="/news.html" class="btn btn-primary">مشاهده همه خبرها</a>
+            </div>
+            
+            <div class="courses-grid" id="latest-list-news"></div>
+        </div>
+    </section> 
+
     <!-- WEBLOG -->
     <section style="display: none;" class="courses-section" id="weblog-section">
         <div class="container">
@@ -491,12 +506,12 @@
                     <span class="section-subtitle">وبلاگ انجمن علمی</span>
                     <h2 class="section-title">جدیدترین مطالب منتشر شده</h2>
                 </div>
-                <a href="/blog.html" class="btn btn-primary">مشاهده همه مطالب</a>
+                <a href="/blog.html" class="btn btn-primary">مشاهده همه پست‌ها</a>
             </div>
             
-            <div class="courses-grid" id="latest-list"></div>
+            <div class="courses-grid" id="latest-list-weblog"></div>
         </div>
-    </section> 
+    </section>     
     
     <section style="display: none;" class="courses-section" id="course-section">
         <div class="container">
@@ -505,7 +520,7 @@
                     <span class="section-subtitle">نشریه انجمن علمی</span>
                     <h2 class="section-title">جدیدترین های نشریه</h2>
                 </div>
-                <a href="courses.html" class="btn btn-primary">مشاهده همه مطالب</a>
+                <a href="/courses.html" class="btn btn-primary">مشاهده همه مطالب</a>
             </div>
             
             <div class="courses-grid">
@@ -553,7 +568,42 @@
               
             </div>
         </div>
-    </section> 
+    </section>
+    
+    <section class="courses-section" id="map-section">
+        <div class="container">
+            <div class="courses-header">
+                <div>
+                    <span class="section-subtitle">دانشکده فنی ساخت و تولید</span>
+                    <h2 class="section-title">موقعیت مکانی</h2>
+                </div>
+                <!-- <a href="/blog.html" class="btn btn-primary">مشاهده همه پست‌ها</a> -->
+            </div>
+            
+            <div class="content-map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2221.370001407865!2d46.33782668253403!3d38.0589313110516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x401a1afca02d8889%3A0x390de14dd910d008!2z2K_Yp9mG2LTZg9iv2Ycg2LPYp9iu2Kog2Ygg2KrZiNmE2YrYrw!5e0!3m2!1sen!2s!4v1765703977717!5m2!1sen!2s" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <div class="content-map-overlay"></div>
+                <div class="content-map-actions">
+                    <button class="content-map-btn" id="content-get-directions">
+                        <i class="fas fa-directions"></i>
+                        <span>مسیریابی</span>
+                    </button>
+                    <button class="content-map-btn" id="content-fullscreen-map">
+                        <i class="fas fa-expand"></i>
+                        <span>تمام صفحه</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- بخش نظرات -->
     <!-- <section class="testimonials-section">

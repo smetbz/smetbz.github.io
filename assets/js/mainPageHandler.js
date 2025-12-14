@@ -1,9 +1,10 @@
 
-async function showLatestBlogs(contents) {
+async function showLatestContents(contents, listContainer, sectionContainer) {
 
+            if(contents.items.length === 0) return;
             contents.items.forEach(ct => {           
             
-                $("#latest-list").append(`
+                $(listContainer).append(`
                      <div class=\"course-card\">
             <div class=\"course-image\">
                 <img src=\"${ct.imageLink}\" alt=\"${ct.title}\">                        
@@ -43,7 +44,7 @@ async function showLatestBlogs(contents) {
                 `)
             });
 
-            $("#weblog-section").fadeIn();
+            $(sectionContainer).fadeIn();
 };
 
 async function showCurrentCourse(content) {
@@ -79,12 +80,21 @@ $(document).ready(function () {
        return;
     });
 
-    $.getJSON(`https://api.smetu.ir/contents/BLOG?per_page=3&page=1`,
+    $.getJSON(`https://api.smetu.ir/contents/NEWS?per_page=3&page=1`,
         function (content) {           
-            showLatestBlogs(content);
+            showLatestContents(content, "#latest-list-news", "#news-section");
         }
     ).fail(function() {
-        $("#weblog-section").hide();                          
+        //$("#weblog-section").hide();                          
+        return;
+    });
+
+    $.getJSON(`https://api.smetu.ir/contents/BLOG?per_page=3&page=1`,
+        function (content) {           
+            showLatestContents(content, "#latest-list-weblog", "#weblog-section");
+        }
+    ).fail(function() {
+        //$("#weblog-section").hide();                          
         return;
     });
 
@@ -93,7 +103,7 @@ $(document).ready(function () {
             showCurrentCourse(content);
         }
     ).fail(function() {
-        $("#course-section").hide();                          
+        //$("#course-section").hide();                          
         return;
     });    
    
