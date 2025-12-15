@@ -10,8 +10,10 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://smetu.ir/instructors.html" />   
     <meta property="og:description" content="لیست اساتید گروه مهندسی ساخت و تولید" />
-    <meta property="og:site_name" content="انجمن علمی ساخت و تولید" />
+    <meta property="og:site_name" content="SMETU" />
     <meta property="og:locale" content="fa_IR" />
+
+    <link rel="canonical" href="https://smetu.ir/instructors.html">
 
     <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
@@ -39,10 +41,10 @@
         <div id="upper-notif" style="display: none;" class="top-bar">
             <div class="container">
                 <div class="top-bar-content">
-                    <a href="javascript:void(0)" style="color: white; text-decoration: underline;">
+                    <a id="upper-notif-link" href="javascript:void(0)" style="color: white;">
                         <span id="upper-notif-text"></span>
                     </a>
-                    <!-- <span id="upper-notif-badge" class="top-bar-badge"></span> -->
+                    <span style="display: none;" id="upper-notif-badge" class="top-bar-badge"></span>
                 </div>
             </div>
         </div>
@@ -463,7 +465,8 @@
                         <li><a target="_blank" href="https://tabrizu.ac.ir/fa"><i class="fas fa-university"></i>دانشگاه تبریز</a></li>
                         <li><a target="_blank" href="https://mechanic.tabrizu.ac.ir/fa"><i class="fas fa-gear"></i>دانشکده مکانیک تبریز</a></li>
                         <li><a target="_blank" href="https://amozesh.tabrizu.ac.ir/samaweb/login.aspx"><i class="fas fa-user"></i>سما دانشگاه تبریز</a></li>
-                        <li><a target="_blank" href="https://samad.app/login"><i class="fas fa-burger"></i>امور دانشجویی سماد تبریز</a></li>                       
+                        <li><a target="_blank" href="https://samad.app/login"><i class="fas fa-burger"></i>وبسایت سماد</a></li>                       
+                        <li><a target="_blank" href="https://refah.swf.ir/Account/Login"><i class="fas fa-bed"></i>اداره رفاه دانشجویی</a></li>
                     </ul>
                 </div>
 
@@ -474,19 +477,11 @@
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
                             <span>تبریز، بلوار 29 بهمن،درب برق،دانشکده فنی مهندسی ساخت و تولید</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span><a href="tel:0411234567">0411234567<a></span>
-                        </li>
+                        </li>                        
                         <li>
                             <i class="fas fa-envelope"></i>
                             <span><a href="mailto:info@smetu.ir">info@smetu.ir<a></span>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span>شنبه تا پنجشنبه: ۸:۰۰ تا ۱۷:۰۰</span>
-                        </li>
+                        </li>                       
                     </ul>
                 </div>
 
@@ -542,11 +537,11 @@
             </div>
             <div class="instru-popup-header">
                 <div class="instru-popup-avatar">
-                    <img src="./assets/images/me2.png" alt="علی رضایی" id="popup-avatar">
+                    <img src="" alt="" id="">
                 </div>
                 <div class="instru-popup-info">
-                    <h2 class="instru-popup-name" id="popup-name">علی رضایی</h2>
-                    <div class="instru-popup-title" id="popup-title">متخصص توسعه Front-end</div>
+                    <h2 class="instru-popup-name" id="popup-name"></h2>
+                    <div class="instru-popup-title" id="popup-title"></div>
                     <!-- <div class="instru-popup-rating" id="popup-rating">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -590,10 +585,10 @@
                     <h3 class="instru-popup-section-title">سوابق تحصیلی</h3>
                     <div class="instru-popup-courses" id="popup-courses-list">
                         <div class="instru-popup-course">
-                            <div class="instru-popup-course-title">توسعه وب با React.js - کامل و پروژه‌محور</div>
+                            <div class="instru-popup-course-title"></div>
                             <div class="instru-popup-course-meta">
-                                <span>۲۴ ساعت</span>
-                                <span>۱۲۸ درس</span>
+                                <span></span>
+                                <span></span>
                             </div>
                         </div>                       
                     </div>
@@ -604,6 +599,22 @@
 
 
     <script src="./assets/js/dashboard.js"></script>
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script>
+    $(document).ready(function () {
+        $.getJSON(`https://api.smetu.ir/upper`,
+            function (upper) {
+                if(upper.message === "off") return;
+                if(upper.link !== "") $("#upper-notif-link").attr("href", upper.link);
+                if(upper.badge !== "") $("#upper-notif-badge").show().text(upper.badge);
+                $("#upper-notif-text").text(upper.message);
+                $("#upper-notif").slideDown();
+            }
+            ).fail(function() {                                 
+       
+        });               
+    });
+    </script>
 
 </body>
 </html>

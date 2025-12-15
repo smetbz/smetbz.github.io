@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>پست وبلاگ انجمن علمی ساخت و تولید</title>
-    <meta name="description" content="خلاصه مقاله برای سئو">
+    <meta name="description" content="مطالب جدید و به‌روز در مورد صنعت، تکنولوژی و... اینجا منتشر می شود.">
 
     <meta property="og:title" content="انجمن علمی ساخت و تولید" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://smetu.ir/blogpost.html" />
-    <!-- <meta property="og:image" content="https://yourforum.example.ir/assets/og-image.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" /> -->
-    <meta property="og:description" content="انجمن علمی مهندسی ساخت و تولید - دانشگاه تبریز" />
+    <meta property="og:url" content="https://smetu.ir/blogpost.html" />    
+    <meta property="og:description" content="مطالب جدید و به‌روز در مورد صنعت، تکنولوژی و... اینجا منتشر می شود." />
     <meta property="og:site_name" content="انجمن علمی ساخت و تولید" />
     <meta property="og:locale" content="fa_IR" />
+
+    <link rel="canonical" href="https://smetu.ir/blogpost.html">
 
     <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
@@ -47,13 +46,14 @@
 
     <!-- هدر -->
     <header class="page-header" id="page-header">
+
         <div id="upper-notif" style="display: none;" class="top-bar">
             <div class="container">
                 <div class="top-bar-content">
-                    <a href="#" style="color: white; text-decoration: underline;">
+                    <a id="upper-notif-link" href="javascript:void(0)" style="color: white;">
                         <span id="upper-notif-text"></span>
                     </a>
-                    <span id="upper-notif-badge" class="top-bar-badge"></span>
+                    <span style="display: none;" id="upper-notif-badge" class="top-bar-badge"></span>
                 </div>
             </div>
         </div>
@@ -298,7 +298,8 @@
                         <li><a target="_blank" href="https://tabrizu.ac.ir/fa"><i class="fas fa-university"></i>دانشگاه تبریز</a></li>
                         <li><a target="_blank" href="https://mechanic.tabrizu.ac.ir/fa"><i class="fas fa-gear"></i>دانشکده مکانیک تبریز</a></li>
                         <li><a target="_blank" href="https://amozesh.tabrizu.ac.ir/samaweb/login.aspx"><i class="fas fa-user"></i>سما دانشگاه تبریز</a></li>
-                        <li><a target="_blank" href="https://samad.app/login"><i class="fas fa-burger"></i>امور دانشجویی سماد تبریز</a></li>
+                        <li><a target="_blank" href="https://samad.app/login"><i class="fas fa-burger"></i>وبسایت سماد</a></li>
+                        <li><a target="_blank" href="https://refah.swf.ir/Account/Login"><i class="fas fa-bed"></i>اداره رفاه دانشجویی</a></li>
                     </ul>
                 </div>
                 
@@ -309,19 +310,11 @@
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
                             <span>تبریز، بلوار 29 بهمن،درب برق،دانشکده فنی مهندسی ساخت و تولید</span>
-                        </li>
-                         <li>
-                            <i class="fas fa-phone"></i>
-                            <span><a href="tel:0411234567">0411234567<a></span>
-                        </li>
+                        </li>                       
                         <li>
                             <i class="fas fa-envelope"></i>
                             <span><a href="mailto:info@smetu.ir">info@smetu.ir<a></span>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span>شنبه تا پنجشنبه: ۸:۰۰ تا ۱۷:۰۰</span>
-                        </li>
+                        </li>                        
                     </ul>
                 </div>
                                 
@@ -357,11 +350,24 @@
     <script src="/assets/js/constants.js"></script>
     <script src="/assets/js/postItselfHandler.js"></script>
     <script>
+
         $(document).ready(function () {
            showPostDetails(getContentId(), "/blog.html", "BLOG").then(() => {
                 $("#loading-overlay").fadeOut();
                 $("#whole-post").fadeIn();  
            }); 
+
+                   $.getJSON(`https://api.smetu.ir/upper`,
+            function (upper) {
+                if(upper.message === "off") return;
+                if(upper.link !== "") $("#upper-notif-link").attr("href", upper.link);
+                if(upper.badge !== "") $("#upper-notif-badge").show().text(upper.badge);
+                $("#upper-notif-text").text(upper.message);
+                $("#upper-notif").slideDown();
+            }
+        ).fail(function() {                                 
+    
+        });
         });        
     </script>
 
