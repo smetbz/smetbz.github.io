@@ -70,6 +70,11 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'IranNastaliq';
+    src: url('../fonts/IranNastaliq/IranNastaliq.ttf') format('truetype');   
+}
+
 
 
 body, 

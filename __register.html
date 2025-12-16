@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ثبت نام دوره مجازی</title>   
+    <meta name="description" content="ثبت نام دوره های مجازی انجمن علمی ساخت و تولید">
+
+    <meta property="og:title" content="انجمن علمی ساخت و تولید" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://smetu.ir/register-course.html" />   
+    <meta property="og:description" content="ثبت نام دوره های مجازی انجمن علمی ساخت و تولید" />
+    <meta property="og:site_name" content="SMETU" />
+    <meta property="og:locale" content="fa_IR" />
+
+    <link rel="canonical" href="https://smetu.ir/register-course.html">
+
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="SMETU" />
+    
+    <!-- فونت‌های محلی -->
+    <link rel="preload" href="./assets/fonts/vazirmatn/Vazirmatn-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/vazirmatn/Vazirmatn-Medium.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./assets/fonts/vazirmatn/Vazirmatn-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- آیکون‌های محلی -->
+    <link rel="stylesheet" href="./assets/icons/css/all.min.css">
+    
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <style>
+
+       .content-btn-submit:disabled {
+        background: grey;
+        opacity: 50%;
+       }
+
+       .content-contact-container {
+        display: block;
+       }
+
+       .no-spin::-webkit-outer-spin-button, .no-spin::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+       }
+
+       .no-spin {
+        -moz-appearance: textfield;
+        }        
+    </style>
+
+</head>
+
+<body class="content-dark-theme">
+
+    <div style="display: none;" id="loading-overlay" class="loading-overlay">
+        <div class="loading-box">
+            <div class="loading-title">درحال بارگذاری</div>
+            <div class="loading-sub">لطفا صبر نمایید</div>
+        </div>
+    </div>
+
+    <!-- هدر بهبود یافته -->
+    <header class="content-page-header" id="content-page-header">
+        <div id="upper-notif" style="display: none;" class="content-top-bar">
+            <div class="content-container">
+                <div class="content-top-bar-content">
+                    <a href="#" style="color: white; text-decoration: underline;">
+                        <span>در هر جا و هر زمان با منابع رایگان به یادگیری ادامه دهید.</span>
+                    </a>
+                    <span class="content-top-bar-badge">جدید</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-container">
+            <div class="content-header-wrap">
+              
+                <a href="/" class="content-logo" id="content-main-logo">
+                    <img style="width: 3rem;" src="/assets/images/logos/icon_sme_small.png">
+                    <span>انجمن علمی ساخت و تولید</span>
+                </a>                            
+
+              
+                <!-- <button class="content-mobile-menu-toggle" id="content-mobile-menu-toggle">
+                    <div class="content-hamburger-lines">
+                        <span class="content-hamburger-line"></span>
+                        <span class="content-hamburger-line"></span>
+                        <span class="content-hamburger-line"></span>
+                    </div>
+                </button> -->
+            </div>
+        </div>
+        
+        
+    </header>
+
+
+    <!-- محتوای صفحه -->
+    <section class="content-contact-section">
+        <div class="content-container">
+            <div class="content-section-header">
+                <span class="content-section-subtitle">بسمه تعالی</span>                
+                <h2 style="font-family: 'IranNastaliq';font-size: 75px;font-weight: 150;" class="content-section-title">فرم عضویت انجمن علمی ساخت و تولید</h2>
+                <p class="content-section-description">
+                  دانشجوی گرامی در صورت تمایل، فرم ذیل را با دقت تکمیل نمایید.
+                </p>
+            </div>
+            
+            <div class="content-contact-container">
+                <div class="content-contact-info">
+                    
+                                 
+                </div>
+                
+                <!-- فرم تماس -->
+                <div class="content-contact-form-container">
+                    <!-- <div class="content-form-header">
+                        <h3 class="content-form-title">فرم ثبت نام</h3>
+                    </div> -->
+
+                     <div class="content-success-message" id="content-success-message"></div>
+
+                    <br>
+                    
+                    <form class="content-contact-form" id="content-contact-form">                        
+
+                        <div class="content-form-group">
+                            <label for="content-subject" class="content-form-label">تاریخ</label>
+                            <input id="register-date" type="text" id="content-subject" class="content-form-input" disabled>                           
+                        </div>
+
+                        <div class="content-form-row">
+                            <div class="content-form-group">
+                                <label for="content-name" class="content-form-label">نام</label>
+                                <input maxlength="20" type="text" typeofdata="fname" id="content-name" class="content-form-input" placeholder="نام خود را وارد کنید" required>
+                                <div class="content-form-error">لطفاً نام خود را وارد کنید</div>
+                            </div>
+                            <div class="content-form-group">
+                                <label for="content-name" class="content-form-label">نام خانوادگی</label>
+                                <input maxlength="30" type="text" typeofdata="lname" id="content-name" class="content-form-input" placeholder="نام خانوادگی خود را وارد کنید" required>
+                                <div class="content-form-error">لطفاً نام خانوادگی خود را وارد کنید</div>
+                            </div>                                                        
+                        </div>
+
+                        <div class="content-form-row">
+                            <div class="content-form-group">
+                                <label for="content-name" class="content-form-label">نام پدر</label>
+                                <input type="text" typeofdata="father_name" id="content-name" class="content-form-input no-spin" placeholder="نام پدر خود را وارد کنید" required>
+                                <div class="content-form-error">لطفاً نام پدر خود را وارد کنید</div>
+                            </div>
+                            <div class="content-form-group">
+                                <label for="content-name" class="content-form-label">کد ملی</label>
+                                <input minlength="10" maxlength="10" type="number" typeofdata="codemelli" id="content-name" class="content-form-input no-spin" placeholder="کد ملی خود را وارد کنید" required>
+                                <div class="content-form-error">لطفاً کد ملی خود را وارد کنید</div>
+                            </div>                                                      
+                        </div>
+
+                        <div class="content-form-row">
+                            <div class="content-form-group">
+                                <label for="content-name" class="content-form-label">محل صدور</label>
+                                <input type="text" typeofdata="birth_place" id="content-name" class="content-form-input" placeholder="محل صدور خود را وارد کنید" required>
+                                <div class="content-form-error">لطفاً محل صدور خود را وارد کنید</div>
+                            </div>
+                            <div class="content-form-group">
+                                <label for="content-name" class="content-form-label">رشته تحصیلی</label>
+                                <input type="text" typeofdata="reshte_tahsili" id="content-name" class="content-form-input" placeholder="رشته تحصیلی خود را وارد کنید" required>
+                                <div class="content-form-error">لطفاً رشته تحصیلی خود را وارد کنید</div>
+                            </div>                                                      
+                        </div>
+
+                        <div class="content-form-row">
+                            <div class="content-form-group">
+                                <label for="content-name" class="content-form-label">گرایش و مقطع</label>
+                                <input type="text" typeofdata="gerayesh_magtaa" id="content-name" class="content-form-input" placeholder="گرایش و مقطع خود را وارد کنید" required>
+                                <div class="content-form-error">لطفاً گرایش و مقطع خود را وارد کنید</div>
+                            </div>
+                            <div class="content-form-group">
+                                <label for="content-name" class="content-form-label">شماره دانشجویی</label>
+                                <input type="number" typeofdata="code_daneshjoei" id="content-name" class="content-form-input no-spin" placeholder="شماره دانشجویی خود را وارد کنید" required>
+                                <div class="content-form-error">لطفاً شماره دانشجویی خود را وارد کنید</div>
+                            </div>                                                      
+                        </div>
+
+                        <div class="content-form-group">
+                            <label for="content-subject" class="content-form-label">ورودی</label>                            
+                            <select typeofdata="voroodi" id="content-subject" class="content-form-input" required>
+                                <option value="1404">1404</option>                                                            
+                                <option value="1403">1403</option>
+                                <option value="1402">1402</option>
+                                <option value="1401">1401</option>
+                                <option value="1400">1400</option>
+                                <option value="1399">1399</option>                               
+                            </select>           
+                        </div>
+
+                         <div class="content-form-group">
+                                <label for="content-name" class="content-form-label">شماره تماس</label>
+                                <input dir="ltr" type="number" typeofdata="phonenum" id="content-name" class="content-form-input" placeholder="09123456789" required>
+                                <div class="content-form-error">لطفاً شماره تماس را وارد کنید</div>
+                        </div>
+
+                        <div class="content-form-group">
+                            <label for="content-message" class="content-form-label">نشانی</label>
+                            <textarea typeofdata="address" id="content-message" class="content-form-textarea" placeholder="نشانی خود را وارد نمایید" required></textarea>
+                            <div class="content-form-error">لطفاً نشانی خود را وارد کنید</div>
+                        </div>
+                                                                                            
+                         <div class="content-form-group">
+                            <label for="content-subject" class="content-form-label">حوزه های علاقه مندی</label>                            
+                            <select typeofdata="favor" id="content-subject" class="content-form-input" required>
+                                <option value="پژوهش">پژوهش</option>                                                            
+                                <option value="آموزش">آموزش</option>
+                                <option value="روابط عمومی">روابط عمومی</option>
+                                <option value="مستندسازی">مستندسازی</option>
+                                <option value="سایت">سایت</option>
+                                <option value="اداری">اداری</option>
+                                <option value="مالی">مالی</option>
+                            </select>           
+                        </div>
+
+                        <div class="content-form-group">
+                                <label for="content-name" class="content-form-label"></label>
+                                <input type="text" typeofdata="favor_final" id="content-name" class="content-form-input" disabled>                               
+                         </div>
+
+
+
+                             <div class="content-form-group">
+                                <label for="content-name" class="content-form-label">آیدی تلگرام</label>
+                                <input dir="ltr" type="text" typeofdata="telg" id="content-name" class="content-form-input" placeholder="@user" required>
+                                <div class="content-form-error">لطفاً آیدی تلگرام را وارد کنید</div>
+                            </div>
+
+                            <div class="content-form-group">
+                            <label for="content-message" class="content-form-label">سابقه فعالیت علمی-پژوهشی و یا اجرایی شما</label>
+                            <textarea typeofdata="sabeghe_faaliat" id="content-message" class="content-form-textarea" placeholder="سوابق خود را وارد نمایید"></textarea>
+                            <!-- <div class="content-form-error">لطفاً سوابق خود را وارد کنید</div> -->
+                        </div>                       
+                                                                        
+                        <button class="content-btn-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>ثبت نام</span>
+                        </button>
+                                               
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش نقشه -->
+    <section style="display: none;" class="content-map-section">
+        <div class="content-container">
+            
+            <div class="content-map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.920915506304!2d51.38974931525861!3d35.68919738019163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e0108b9c5d2a5%3A0x7a1e1b5b5b5b5b5b!2sValiasr%20St%2C%20Tehran%2C%20Iran!5e0!3m2!1sen!2s!4v1633023081234!5m2!1sen!2s" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <div class="content-map-overlay"></div>
+                <div class="content-map-actions">
+                    <button class="content-map-btn" id="content-get-directions">
+                        <i class="fas fa-directions"></i>
+                        <span>مسیریابی</span>
+                    </button>
+                    <button class="content-map-btn" id="content-fullscreen-map">
+                        <i class="fas fa-expand"></i>
+                        <span>تمام صفحه</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش سوالات متداول -->
+    <section class="content-faq-section">
+        <div class="content-container">
+            <div class="content-section-header">
+                <span class="content-section-subtitle">سوالات متداول</span>
+                <h2 class="content-section-title">پاسخ به پرسش‌های پرتکرار</h2>
+                <p class="content-section-description">
+                    در این بخش به برخی از سوالات متداول کاربران پاسخ داده‌ایم. 
+                    در صورت عدم یافتن پاسخ سوال خود، از طریق فرم تماس با ما در ارتباط باشید.
+                </p>
+            </div>
+            
+            <div class="content-faq-container">
+                <!-- سوال ۱ -->
+                <div class="content-faq-item">
+                    <div class="content-faq-question">
+                        <span>چگونه می‌توانم در دوره‌های فراآموز ثبت نام کنم؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="content-faq-answer">
+                        <p>
+                            برای ثبت نام در دوره‌های فراآموز، ابتدا در سایت ثبت نام کنید، سپس به صفحه دوره مورد نظر مراجعه کرده و روی دکمه "ثبت نام در دوره" کلیک کنید. پس از پرداخت هزینه دوره، به محتوای آموزشی دسترسی خواهید داشت.
+                        </p>
+                    </div>
+                </div>
+                               
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="content-modern-footer">
+        <div class="content-footer-background">
+            <div class="content-footer-pattern"></div>
+        </div>
+        
+        <div class="content-footer-container">
+            <div class="content-footer-main">
+                <!-- ستون اول: درباره ما -->
+                <div class="content-footer-col">
+                    <a href="/" class="content-footer-logo">
+                         <img style="width: 3rem;" src="/assets/images/logos/icon_sme_small.png">
+                        <span style="font-size: 1.2rem;">انجمن علمی ساخت و تولید</span>
+                    </a>
+                    <p class="content-footer-description">
+                        انجمن علمی مهندسی ساخت و تولید دانشگاه تبریز برای اولین بار
+                        در سال 1384 به همت استادان و دانشجویان وقت شروع به فعالیت کرده و هرساله
+                        شاهد برگزاری انتخابات شورای مرکزی شامل 7 عضو می‌باشد.
+                    </p>
+                    <div class="content-footer-social">
+                        <a href="https://www.instagram.com/sakhtotolid_tabrizuni" class="content-social-link" aria-label="اینستاگرام">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://t.me/SME_TU_official" class="content-social-link" aria-label="تلگرام">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a style="display: none;" href="#" class="content-social-link" aria-label="لینکدین">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="content-social-link" aria-label="یوتیوب">
+                            <i class="fab fa-youtube"></i>
+                        </a>   
+                    </div>
+                </div>
+                
+                <!-- ستون دوم: لینک‌های سریع -->
+                <div class="content-footer-col">
+                    <h3>لینک‌های سریع</h3>
+                    <ul class="content-footer-links">
+                       <li><a href="/"><i class="fas fa-home"></i> صفحه اصلی</a></li>
+                        <li><a href="/blog.html"><i class="fas fa-blog"></i>وبلاگ</a></li>
+                        <li><a href="/journal.html"><i class="fas fa-newspaper"></i>نشریه</a></li>
+                        <li><a href="/news.html"><i class="fas fa-newspaper"></i>اخبار</a></li>
+                        <li><a href="/online_course.html"><i class="fas fa-graduation-cap"></i>دوره مجازی</a></li>
+                    </ul>
+                </div>
+                                
+                <div class="content-footer-col">
+                    <h3>لینک های مفید</h3>
+                    <ul class="content-footer-links">
+                      <li><a target="_blank" href="https://tabrizu.ac.ir/fa"><i class="fas fa-university"></i>دانشگاه تبریز</a></li>
+                        <li><a target="_blank" href="https://mechanic.tabrizu.ac.ir/fa"><i class="fas fa-gear"></i>دانشکده مکانیک تبریز</a></li>
+                        <li><a target="_blank" href="https://amozesh.tabrizu.ac.ir/samaweb/login.aspx"><i class="fas fa-user"></i>سما دانشگاه تبریز</a></li>
+                        <li><a target="_blank" href="https://samad.app/login"><i class="fas fa-burger"></i>وبسایت سماد</a></li>                
+                        <li><a target="_blank" href="https://refah.swf.ir/Account/Login"><i class="fas fa-bed"></i>اداره رفاه دانشجویی</a></li>
+                    </ul>
+                </div>
+                
+                <!-- ستون چهارم: اطلاعات تماس -->
+                <div class="content-footer-col">
+                    <h3>اطلاعات تماس</h3>
+                    <ul class="content-footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>تبریز، بلوار 29 بهمن،درب برق،دانشکده فنی مهندسی ساخت و تولید</span>
+                        </li>                        
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span><a href="mailto:info@smetu.ir">info@smetu.ir<a></span>
+                        </li>                        
+                    </ul>
+                </div>
+                
+                <!-- ستون پنجم: خبرنامه -->
+                <!-- <div class="content-footer-col">
+                    <h3>خبرنامه</h3>
+                    <p class="content-newsletter-text">
+                        با عضویت در خبرنامه، از جدیدترین دوره‌ها و تخفیف‌های ویژه مطلع شوید.
+                    </p>
+                    <div class="content-footer-newsletter">
+                        <form class="content-newsletter-form">
+                            <input type="email" class="content-newsletter-input" placeholder="آدرس ایمیل شما" required>
+                            <button type="submit" class="content-btn-newsletter">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>عضویت در خبرنامه</span>
+                            </button>
+                        </form>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        
+  
+        <!-- بخش پایین فوتر -->
+        <div class="content-footer-bottom">
+            <div class="content-footer-container">
+                <div class="content-footer-bottom-content">
+                    <div class="content-footer-copyright">
+                        © 2025 انجمن علمی ساخت و تولید دانشگاه تبریز، تمامی حقوق محفوظ است.
+                    </div>
+                    <div class="content-footer-bottom-links">
+                        
+                       <a target="_blank" href="https://kavascript.ir/">طراحی توسط کاوه</a>
+                        <!-- <a href="/faq.html">سوالات متداول</a> -->
+                        <a href="/sitemap.xml">نقشه سایت</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+   
+    <!-- <div class="content-back-to-top" id="content-back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div> -->
+
+    <script src="./assets/js/dashboard.js"></script>   
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script> 
+    <script src="./assets/js/sweetalert2.all.min.js"></script> 
+    <script src="./assets/js/util.js"></script>
+    <script src="./assets/js/constants.js"></script>
+    <script src="./assets/js/registerForum.js"></script>
+    <script>
+        $(document).ready(function () {
+            setSystemForRegister();
+        });
+    </script>
+
+</body>
+</html>
