@@ -5,7 +5,7 @@ async function initBlog({
     categoriesContainerSelector = "#catsofblog",    
     filterLabel = "BLOG",
     perPage = 10,        
-    defaultImage = "/assets/images/default.png"   
+    defaultImage = "/assets/images/default.jpg"   
 }) {
 
     let totalPages = 1;

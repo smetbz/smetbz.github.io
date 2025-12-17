@@ -15,7 +15,7 @@ async function setSystemForRegister() {
     $("#content-contact-form").on("submit", (e) => {
         e.preventDefault();
         $(".content-btn-submit").text("...").prop("disabled", true);
-        const WEBHOOK_URL = `https://api.smetu.ir/webhook/course-register`;
+        const WEBHOOK_URL = `https://api.smetu.ir/forumreg`;
 
         const first_name = $("[typeofdata=\"fname\"]").val().trim();
         const last_name = $("[typeofdata=\"lname\"]").val().trim();
