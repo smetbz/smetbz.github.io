@@ -812,7 +812,7 @@ const instructorsData = {
     5: {
         name: "دکتر مقصود شلوندی",
         title: "دکترای تخصصی",       
-        bio: "عضو هیئت علمی تمام وقت",
+        bio: "در کمال تاسف دکتر شلوندی به تاریخ سی آذر 1404 بر اثر ایست قلبی دار فانی را وداع گفت.\nروحش شاد و یادش گرامی باد.",
         skills: [
             { name: 'رزومه', url: 'https://faculty.tabrizu.ac.ir/mshalvandi/fa/teachersInfo/cv/30' },
             { name: 'Google Scholar', url: `https://scholar.google.com/citations?user=fJB1H6cAAAAJ&hl=en` }
