@@ -1,3 +1,19 @@
+async function showLoadingBox(title, html, showOrHide) {
+
+
+    $(".loading-title").text(title);
+    $(".loading-sub").html(html);
+
+    if(showOrHide === true) {
+        $("#loading-overlay").show();
+    }
+
+    if(showOrHide === false) {
+        $("#loading-overlay").hide();
+    }
+}
+
+
 async function showPostDetails(contentId, fallbackUrl, label) {
 
     $.getJSON(`https://api.smetu.ir/contents/${label}?issue_id=${contentId}`,
@@ -48,7 +64,7 @@ async function showPostDetails(contentId, fallbackUrl, label) {
 
         }
     ).fail(() => {
-        window.location.href = fallbackUrl;
+        showLoadingBox("پست پیدا نشد!", "پدرت همین دیروز مرررده", true);
         return;
     });
         
