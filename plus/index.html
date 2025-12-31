@@ -446,15 +446,19 @@
 
 
     <script>
-
-        $.post("https://api.smetu.ir/miniapp", { initData: window.Telegram.WebApp.initData },
+        $(document).ready(function () {
+            //alert()
+            $.post("https://api.smetu.ir/miniapp", { initData: window.Telegram.WebApp.initData },
             function (data) {
+                alert(JSON.stringify(data));
                 if(data.status) {
                     alert(data.username);
                 }
             },
             
-        );
+            );
+        });
+        
 
         // Trigger welcome notification after 5 seconds
         setTimeout(() => {
