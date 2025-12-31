@@ -15,6 +15,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icon/192x192.png">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="manifest" href="__manifest.json">
+    <script src="./assets/js/telegram.js"></script>
 </head>
 
 <body>
@@ -440,8 +441,21 @@
     <script src="assets/js/plugins/progressbar-js/progressbar.min.js"></script>
     <!-- Base Js File -->
     <script src="assets/js/base.js"></script>
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/mainPageInteractor.js"></script>
+
 
     <script>
+
+        $.post("https://api.smetu.ir/miniapp", { initData: window.Telegram.WebApp.initData },
+            function (data) {
+                if(data.status) {
+                    alert(data.username);
+                }
+            },
+            
+        );
+
         // Trigger welcome notification after 5 seconds
         setTimeout(() => {
             notification('notification-welcome', 5000);
