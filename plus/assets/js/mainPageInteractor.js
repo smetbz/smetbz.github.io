@@ -14,13 +14,17 @@ async function auth() {
             initData: initData
         }),
         success: function (res) {            
-            localStorage.setItem("token", res.token);
+            Telegram.WebApp.CloudStorage.setItem("token", res.token, 
+                () => {
+                    alert("TOKEN SAVED!")
+                }
+            )
             alert(`Username : ${res.user.username}\nToken : ${res.token}`);
         },
         error: function (xhr) {
             console.error("Auth failed:", xhr.responseText);
             if(xhr.responseText.includes("NO_TELEGRAM")) {
-                window.location.href = "/component-error-page.html";
+                window.location.href = "/plus/component-error-page.html";
                 return;
             }
             
@@ -29,22 +33,23 @@ async function auth() {
 }
 
 $(document).ready(async function () {
-    const token = localStorage.getItem("token");
-
-    if(!token) {
-        auth()
-    } else {
-        $.ajax({
-            type: "GET",
-            url: BASE_URL + "/me",           
-            headers: {
-                Authorization: "Bearer " + token
-            },
-            error(xhr) {
-                if(xhr.status === 401) {
-                    auth()
+    
+    Telegram.WebApp.CloudStorage.getItem("token", (token) => {
+        if(!token) {
+            auth()
+        } else {
+            $.ajax({            
+                url: BASE_URL + "/me",           
+                headers: {
+                    "Authorization": "Bearer " + token
+                },
+                error(xhr) {
+                    if(xhr.status === 401) {
+                        auth()
+                    }
                 }
-            }
-        });
-    }
+            });
+        }
+    });
+
 });
